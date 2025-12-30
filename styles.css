@@ -12,6 +12,7 @@
 
 *{ box-sizing: border-box; }
 html{ scroll-behavior: smooth; }
+
 body{
   margin: 0;
   background: var(--bg);
@@ -68,12 +69,14 @@ body{
   padding: 72px 0;
 }
 
+/* ALL TITLES NOW USE THE ACCENT COLOR */
 .section-title{
   font-family: var(--serif);
   font-weight: 500;
   letter-spacing: 0.2px;
   margin: 0 0 22px;
   font-size: 70px;
+  color: var(--accent);
 }
 
 .section-title.centered{
@@ -91,6 +94,19 @@ body{
   grid-template-columns: 1.05fr 0.95fr;
   gap: 70px;
   align-items: start;
+}
+
+/* Justified text blocks */
+.text p,
+.news-item,
+.edu-main,
+.edu-sub,
+.contact-note{
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
 }
 
 .text p{
@@ -187,9 +203,9 @@ body{
   padding-bottom: 70px;
 }
 
+/* Size change only, color inherited */
 .section-contact .section-title{
   font-size: 74px;
-  color: var(--accent);
 }
 
 .contact-note{
@@ -236,6 +252,7 @@ body{
   width: 100%;
 }
 
+/* Responsive */
 @media (max-width: 980px){
   .wrap{ width: min(900px, calc(100% - 44px)); }
   .grid-2{ grid-template-columns: 1fr; }
