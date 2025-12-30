@@ -1,1 +1,158 @@
-<h1>My Website</h1>
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Negar Sadeghi</title>
+  <meta name="description" content="Negar Sadeghi | PhD student in Industrial Engineering at Northeastern University." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="brand">Negar Sadeghi</div>
+
+      <nav class="nav">
+        <a href="#about" class="nav-link">About Me</a>
+        <a href="#news" class="nav-link">News</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="section section-about">
+      <div class="wrap grid-2">
+        <div class="text">
+          <h1 class="section-title">About</h1>
+
+          <p>
+            My name is Negar (Niki) Sadeghi. I am a PhD student in Industrial Engineering at Northeastern University,
+            where I work on simulation based optimization and AI driven decision support for healthcare and
+            pharmaceutical supply chains.
+          </p>
+
+          <p>
+            My research lies at the intersection of optimization, simulation, and machine learning, with a focus on time
+            sensitive and patient specific systems such as cell and gene therapy supply chains. I develop data driven
+            models to analyze uncertainty, operational tradeoffs, and system level performance in complex healthcare
+            logistics problems.
+          </p>
+
+          <p class="closing">
+            I am happy to connect and discuss research ideas or potential collaborations.
+          </p>
+        </div>
+
+        <div class="photo">
+          <img src="headshot.jpg" alt="Negar Sadeghi headshot" />
+        </div>
+      </div>
+      <div class="section-divider"></div>
+    </section>
+
+    <section id="news" class="section section-news">
+      <div class="wrap">
+        <h2 class="section-title centered">News</h2>
+
+        <div class="news-list">
+          <div class="news-item">
+            <span class="news-date">December 2025:</span>
+            <span class="news-text">Presented our work on CAR T cell therapy supply chain optimization at the Winter Simulation Conference.</span>
+          </div>
+
+          <div class="news-item">
+            <span class="news-date">December 2025:</span>
+            <span class="news-text">Received the WSC Diversity Award and ACM SIGSIM Student Travel Award.</span>
+          </div>
+
+          <div class="news-item">
+            <span class="news-date">December 2025:</span>
+            <span class="news-text">Served as Session Chair for “Generative AI and Simulation I” and “Methodological Perspectives and Applications in Healthcare” at the Winter Simulation Conference 2025.</span>
+          </div>
+
+          <div class="news-item">
+            <span class="news-date">May 2025:</span>
+            <span class="news-text">Paper on simulation based optimization for healthcare logistics accepted to ECMS 2025.</span>
+          </div>
+        </div>
+      </div>
+      <div class="section-divider muted"></div>
+    </section>
+
+    <section id="education" class="section section-education">
+      <div class="wrap">
+        <h2 class="section-title centered">Education</h2>
+
+        <div class="edu-block">
+          <div class="edu-row">
+            <span class="edu-dot">•</span>
+            <div class="edu-text">
+              <div class="edu-main">PhD in Industrial Engineering, Northeastern University</div>
+              <div class="edu-sub">(Jan 2025 to Present)</div>
+            </div>
+          </div>
+
+          <div class="edu-row">
+            <span class="edu-dot">•</span>
+            <div class="edu-text">
+              <div class="edu-main">MSc and BSc in Industrial Engineering, Amirkabir University of Technology</div>
+              <div class="edu-sub">(Sep 2017 to Feb 2024) Thesis work in intelligent decision support systems and network analysis.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section-divider"></div>
+    </section>
+
+    <section id="contact" class="section section-contact">
+      <div class="wrap contact-grid">
+        <div class="contact-left">
+          <h2 class="section-title">Get in Touch</h2>
+          <p class="contact-note">
+            Whether you have a question, an idea, or just want to say hello, feel free to reach out.
+          </p>
+        </div>
+
+        <div class="contact-right">
+          <div class="contact-line">
+            <span class="label">Email:</span>
+            <a class="strong-link" href="mailto:sadeghi.ne@northeastern.edu">sadeghi.ne@northeastern.edu</a>
+          </div>
+
+          <div class="contact-line">
+            <a class="under-link" href="#" target="_blank" rel="noreferrer">Github</a>
+          </div>
+
+          <div class="contact-line">
+            <a class="under-link" href="#" target="_blank" rel="noreferrer">Linkedin</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-band"></div>
+    </section>
+  </main>
+
+  <script>
+    const links = document.querySelectorAll(".nav-link");
+    const sections = [...document.querySelectorAll("section[id]")];
+
+    function setActive() {
+      const y = window.scrollY + 120;
+      let current = sections[0]?.id;
+      for (const s of sections) {
+        if (s.offsetTop <= y) current = s.id;
+      }
+      links.forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#" + current));
+    }
+
+    window.addEventListener("scroll", setActive, { passive: true });
+    setActive();
+  </script>
+</body>
+</html>
+
