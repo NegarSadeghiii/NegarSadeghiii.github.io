@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -33,7 +34,9 @@
 
   <main>
 
+    <!-- ABOUT -->
     <section id="about" class="section section-about">
+
       <div class="wrap grid-2">
 
         <div class="text">
@@ -64,6 +67,7 @@
           </p>
 
 
+          <!-- PROFILE LINKS -->
           <div class="profile-links">
 
             <a
@@ -93,6 +97,7 @@
           </div>
 
 
+          <!-- AREAS OF EXPERTISE -->
           <div class="expertise">
             <span>Generative AI</span>
             <span>LLMs &amp; RAG</span>
@@ -119,10 +124,12 @@
       </div>
 
       <div class="section-divider"></div>
+
     </section>
 
 
 
+    <!-- NEWS -->
     <section id="news" class="section section-news">
 
       <div class="wrap">
@@ -139,14 +146,12 @@
             </span>
           </div>
 
-
           <div class="news-item">
             <span class="news-date">December 2025:</span>
             <span class="news-text">
               Received the WSC Diversity Award and ACM SIGSIM Student Travel Award.
             </span>
           </div>
-
 
           <div class="news-item">
             <span class="news-date">December 2025:</span>
@@ -156,7 +161,6 @@
               at the Winter Simulation Conference 2025.
             </span>
           </div>
-
 
           <div class="news-item">
             <span class="news-date">May 2025:</span>
@@ -171,10 +175,12 @@
       </div>
 
       <div class="section-divider muted"></div>
+
     </section>
 
 
 
+    <!-- CONTACT -->
     <section id="contact" class="section section-contact">
 
       <div class="wrap contact-grid">
@@ -227,16 +233,18 @@
       const y = window.scrollY + 120;
       let current = sections[0]?.id;
 
-      for (const s of sections) {
-        if (s.offsetTop <= y) current = s.id;
+      for (const section of sections) {
+        if (section.offsetTop <= y) {
+          current = section.id;
+        }
       }
 
-      links.forEach(a =>
-        a.classList.toggle(
+      links.forEach(link => {
+        link.classList.toggle(
           "active",
-          a.getAttribute("href") === "#" + current
-        )
-      );
+          link.getAttribute("href") === "#" + current
+        );
+      });
 
     }
 
@@ -247,4 +255,5 @@
   </script>
 
 </body>
+
 </html>
